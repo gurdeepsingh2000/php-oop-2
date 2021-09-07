@@ -21,17 +21,43 @@ class Eshop{
         $this->typeCommerce = $TipoDiCommercio;
     }
 
-    public function addProduct(Products $nameofProduct){
+    public function addProduct(Product $nameofProduct){
         $this->products[] = $nameofProduct;
+    }
+
+    public function getProducts(){
+        return $this->products;
     }
 
 
 }
 
 $eshop = new Eshop('Amazon','Ecommerce','B2P');
-print_r($eshop);
+
+$laptops = new Laptop();
+$laptops2 = new Laptop('Razor','Techno',9000,2.90);
+
+$phones = new Phone();
+
+$proteins = new Protein();
+
+$bikes = new Bike();
+
+$eshop->addProduct($laptops);
+$eshop->addProduct($phones);
+$eshop->addProduct($proteins);
+$eshop->addProduct($bikes);
+$eshop->addProduct($laptops2);
+
+
+
+
+print_r($eshop-> getProducts());
+
+
 
 ?>
+
 
 
 <!-- 1. creiamo l'eshop
