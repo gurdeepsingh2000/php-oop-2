@@ -25,8 +25,16 @@ class Eshop{
         $this->products[] = $nameofProduct;
     }
 
+    public function addUsers(Users $users){
+        $this->users[]=$users;
+    }
+
     public function getProducts(){
         return $this->products;
+    }
+
+    public function getUsers(){
+        return $this->users;
     }
 
 
@@ -35,7 +43,6 @@ class Eshop{
 $eshop = new Eshop('Amazon','Ecommerce','B2P');
 
 $laptops = new Laptop();
-$laptops2 = new Laptop('Razor','Techno',9000,2.90);
 
 $phones = new Phone();
 
@@ -47,12 +54,23 @@ $eshop->addProduct($laptops);
 $eshop->addProduct($phones);
 $eshop->addProduct($proteins);
 $eshop->addProduct($bikes);
-$eshop->addProduct($laptops2);
 
 
 
 
-print_r($eshop-> getProducts());
+print_r($eshop-> getProducts()) ;
+
+'<br>';
+
+$user =  new Users('Mario', 'ronaldo', 'Via delle Carrozze','Ciaomario@mario.com', 'Premium', 3920489348903, 2022);
+
+$eshop->addUsers($user);
+
+print_r($eshop->  getUsers()) ;
+
+
+
+
 
 
 
