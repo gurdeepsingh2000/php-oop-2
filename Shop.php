@@ -62,9 +62,13 @@ print_r($eshop-> getProducts()) ;
 
 '<br>';
 
-$user =  new Users('Mario', 'ronaldo', 'Via delle Carrozze','Ciaomario@mario.com', 'Premium', 3920489348903, 2022);
+$user =  new Users('Mario', 'ronaldo', 'Via delle Carrozze','Ciaomario@mario.com', 'Premium', 3920489348903, 2020);
+
+$user2 = new client1();
 
 $eshop->addUsers($user);
+$eshop->addUsers($user2);
+
 
 print_r($eshop->  getUsers()) ;
 
