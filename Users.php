@@ -10,8 +10,10 @@ class Users {
     private $MailAddress;
     private $Membership = 'free';
     private $CreditCrad;
-    private $CCexpired;
+    private $CCexpiration;
     private $Discount;
+    public $Date;
+
 
     public function __construct(string $name, string $surname, string $address, string $mailaddress, string $membership, int $creditcard, int $CCYearExp) {
         $this->Name = $name;
@@ -20,11 +22,16 @@ class Users {
         $this->Mailaddress = $mailaddress;
         $this->Membership = $membership;
         $this->CreditCrad = $creditcard;
-        $this->CCexpired = $CCYearExp;
+        $this->CCexpiration = $CCYearExp;
         $this->Discount = 0;
+        $this->Date = date('Y', time());
 
          if($this->Membership !== 'free'){
             $this->Discount = 50;
+        }
+
+        if($this->Date > $CCYearExp){
+            $this->CCexpiration = 'This card has been expired';
         }
     }
 
@@ -57,10 +64,12 @@ class client1 extends Users{
         $this->Surname = 'Marini';
         $this->address = 'Via di giovanni 13';
         $this->Mailaddress = 'valeriomarini@gmail.com';
-        $this->Membership = 'premium';
+        $this->Membership = 'free';
         $this->CreditCrad = 3948930494834;
-        $this->CCexpired = 2025;
+        $this->CCexpiration = 2015;
+        if($this->Membership !== 'free'){
+            $this->Discount = 50;
+        }
     }
 } 
-
 ?>

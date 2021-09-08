@@ -73,11 +73,6 @@ $eshop->addUsers($user2);
 print_r($eshop->  getUsers()) ;
 
 
-
-
-
-
-
 ?>
 
 
