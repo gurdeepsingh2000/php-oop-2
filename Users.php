@@ -15,18 +15,19 @@ class Users {
     public $Date;
 
 
-    public function __construct(string $name, string $surname, string $address, string $mailaddress, string $membership, int $creditcard, int $CCYearExp) {
+    public function __construct(string $name, string $surname, string $address, int $PhoneNumber, string $mail, string $membership, int $creditcard, int $CCYearExp) {
         $this->Name = $name;
         $this->Surname = $surname;
-        $this->address = $address;
-        $this->Mailaddress = $mailaddress;
+        $this->Address = $address;
+        $this->MailAddress = $mail;
         $this->Membership = $membership;
         $this->CreditCrad = $creditcard;
+        $this->PhoneNumber = '+39' . $PhoneNumber;
         $this->CCexpiration = $CCYearExp;
         $this->Discount = 0;
         $this->Date = date('Y', time());
 
-         if($this->Membership !== 'free'){
+         if($this->Membership === 'Premium'){
             $this->Discount = 50;
         }
 
@@ -35,41 +36,24 @@ class Users {
         }
     }
 
-    public function getName(){
-        return $this->Name;
-    }
+    // public function getName(){
+    //     return $this->Name;
+    // }
 
-    public function getSurname(){
-        return $this->Surname;
-    }
+    // public function getSurname(){
+    //     return $this->Surname;
+    // }
 
-    public function getAddress(){
-        return $this->Address;
-    }
+    // public function getAddress(){
+    //     return $this->Address;
+    // }
 
-    public function getMailaddress(){
-        return $this->Mailaddress;
-    }
+    // public function getMailaddress(){
+    //     return $this->Mailaddress;
+    // }
 
-    public function getMembership(){
-        return $this->Membership;
-    }
+    // public function getMembership(){
+    //     return $this->Membership;
+    // }
 }
-
-
-class client1 extends Users{
-    public function __construct()
-    {
-        $this->Name = 'Valerio';
-        $this->Surname = 'Marini';
-        $this->address = 'Via di giovanni 13';
-        $this->Mailaddress = 'valeriomarini@gmail.com';
-        $this->Membership = 'free';
-        $this->CreditCrad = 3948930494834;
-        $this->CCexpiration = 2015;
-        if($this->Membership !== 'free'){
-            $this->Discount = 50;
-        }
-    }
-} 
 ?>

@@ -84,5 +84,4 @@ class Bike extends Product {
         $this->ShippingPrice = 10.99;
     }
 }
-
 ?>

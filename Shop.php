@@ -56,23 +56,22 @@ $eshop->addProduct($proteins);
 $eshop->addProduct($bikes);
 
 
-
-
+echo "<pre>";
 print_r($eshop-> getProducts()) ;
+echo "</pre>";
 
-'<br>';
 
-$user =  new Users('Mario', 'ronaldo', 'Via delle Carrozze','Ciaomario@mario.com', 'Premium', 3920489348903, 2020);
+$user =  new Users('Mario', 'ronaldo', 'Via delle Carrozze', 3898917283,'Ciaomario@mario.com', 'Premium', 3920489348903, 2020);
+$user2 =  new Users('Luigi', 'Gallo', 'Via di boccea', 38202938923,'Luigi@gmail.com', 'Free', 9749384793893, 2029);
 
-$user2 = new client1();
+
 
 $eshop->addUsers($user);
 $eshop->addUsers($user2);
 
-
+echo "<pre>";
 print_r($eshop->  getUsers()) ;
-
-
+echo "</pre>";
 ?>
 
 
